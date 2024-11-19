@@ -1,6 +1,6 @@
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 
 
 class Hotel(models.Model):
@@ -8,6 +8,15 @@ class Hotel(models.Model):
     description = models.TextField()
     address = models.CharField(max_length=30)
     owner = models.CharField(max_length=30)
+
+
+class CustomUser(AbstractUser):
+    USER_TYPES = [
+        ('user', 'Regular User'),
+        ('admin', 'Hotel Admin'),
+    ]
+    user_type = models.CharField(max_length=20, choices=USER_TYPES, default='user')
+    managed_hotel = models.ForeignKey(Hotel, on_delete=models.SET_NULL, null=True, blank=True, related_name='admins')
 
 
 class RoomType(models.Model):
@@ -24,7 +33,7 @@ class Room(models.Model):
 
 
 class Reservation(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     hotel = models.ForeignKey(Hotel, on_delete=models.CASCADE)
     room = models.ForeignKey(Room, on_delete=models.CASCADE)
     start_date = models.DateField()

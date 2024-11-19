@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Hotel, Room, RoomType, Review, Reservation
+from .models import Hotel, Room, RoomType, Review, Reservation, CustomUser
 from django.utils import timezone
 
 
@@ -29,6 +29,7 @@ class ReservationAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Hotel)
+admin.site.register(CustomUser)
 admin.site.register(Room)
 admin.site.register(RoomType)
 admin.site.register(Review)

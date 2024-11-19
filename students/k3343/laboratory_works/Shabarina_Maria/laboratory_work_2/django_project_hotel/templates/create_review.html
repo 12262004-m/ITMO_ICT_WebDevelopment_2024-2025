@@ -9,7 +9,7 @@
 <body>
     <header>
         <h1 align="center">Leave a Review</h1>
-        <a href="{% url 'all_reservations' %}" class="back-button">← Back to reservations</a>
+        <a href="{% url 'user_reservations' %}" class="back-button">← Back to reservations</a>
     </header>
     <div class="review-container">
         <h2>New review for reservation №{{reservation.id}} in hotel "{{ reservation.hotel.name }}"</h2>

@@ -17,7 +17,7 @@
             {% csrf_token %}
             <div class="reservation-actions">
                 <button type="submit" class="delete-button">Yes, delete</button>
-                <a href="{% url 'all_reservations' %}" class="edit-button">Cancel</a>
+                <a href="{% url 'user_reservations' %}" class="edit-button">Cancel</a>
             </div>
         </form>
     </div>
