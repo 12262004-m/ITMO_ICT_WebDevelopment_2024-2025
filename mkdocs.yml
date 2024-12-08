@@ -16,5 +16,8 @@ nav:
  - Практическая работа №3:
    - Задание 1: PR_3/task1.md
    - Задание 2: PR_3/task2.md
+ - Лабораторная работа №3:
+   - Описание: LR_3/description.md
+   - Задание: LR_3/task.md
 theme:
  name: dracula
