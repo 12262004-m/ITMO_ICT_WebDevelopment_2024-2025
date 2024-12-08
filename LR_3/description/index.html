@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-        <title>Задание 2 - Отчет к лабораторным работам по курсу "WEB-пограммирование"</title>
+        <title>Описание - Отчет к лабораторным работам по курсу "WEB-пограммирование"</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -74,7 +74,7 @@
             </li>
             <li class="drac-box">
                 <a href="../.."
-                    class=" active 
+                    class="
                     drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
                     data-bs-toggle="collapse" data-bs-target="#лабораторная-работа-№1-collapse" aria-expanded="false">
                     Лабораторная работа №1
@@ -83,7 +83,7 @@
                     <ul class="mb-5 drac-list drac-list-none">
                             
     <li class="drac-box-ternary">
-        <a href="../task1/"
+        <a href="../../LR_1/task1/"
             class="
             drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
             Задание 1
@@ -91,15 +91,15 @@
     </li>
                             
     <li class="drac-box-ternary">
-        <a href="./"
-            class=" active 
+        <a href="../../LR_1/task2/"
+            class="
             drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
             Задание 2
         </a>
     </li>
                             
     <li class="drac-box-ternary">
-        <a href="../task3/"
+        <a href="../../LR_1/task3/"
             class="
             drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
             Задание 3
@@ -107,7 +107,7 @@
     </li>
                             
     <li class="drac-box-ternary">
-        <a href="../task4/"
+        <a href="../../LR_1/task4/"
             class="
             drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
             Задание 4
@@ -115,7 +115,7 @@
     </li>
                             
     <li class="drac-box-ternary">
-        <a href="../task5/"
+        <a href="../../LR_1/task5/"
             class="
             drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
             Задание 5
@@ -210,7 +210,7 @@
             </li>
             <li class="drac-box">
                 <a href="../.."
-                    class="
+                    class=" active 
                     drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
                     data-bs-toggle="collapse" data-bs-target="#лабораторная-работа-№3-collapse" aria-expanded="false">
                     Лабораторная работа №3
@@ -219,15 +219,15 @@
                     <ul class="mb-5 drac-list drac-list-none">
                             
     <li class="drac-box-ternary">
-        <a href="../../LR_3/description/"
-            class="
+        <a href="./"
+            class=" active 
             drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
             Описание
         </a>
     </li>
                             
     <li class="drac-box-ternary">
-        <a href="../../LR_3/task/"
+        <a href="../task/"
             class="
             drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
             Задание
@@ -264,13 +264,13 @@
         <div class="container">
             <div class="row row-preview">
                 <div class="col">
-                    <a href="../task1/"
+                    <a href="../../PR_3/task2/"
                         class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </div>
                 <div class="col">
-                    <a href="../task3/"
+                    <a href="../task/"
                         class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover" style="padding-left: 3%;">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
@@ -307,51 +307,25 @@
             <!-- block content -->
                 <section class="p-md-5 section-content">
     <article>
-        <p><h2 id="no2-tcp-">Задание №2. TCP-сервер</h2>
-<h3 id="_1">Описание:</h3>
-<p>Реализовать клиентскую и серверную часть приложения. Клиент запрашивает выполнение математической операции, параметры которой вводятся с клавиатуры. Сервер обрабатывает данные и возвращает результат клиенту.
-В качестве операции,окторую необходимо обработать и направить клиенту, (отталкиваясь от моего варианта) было предложено реализовать поиск площади трапеции.</p>
-<h3 id="_2">Требования:</h3>
-<ul>
-<li>Обязательно использовать библиотеку socket. </li>
-<li>Реализовать с помощью протокола TCP.</li>
-</ul>
-<h3 id="_3">Листинг кода:</h3>
-<h4 id="serverpy">server.py</h4>
-<pre><code>import socket
-
-
-def trapezoid_area(a_side, b_side, h_side):
-    return (a_side + b_side)*h_side/2
-
-
-with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
-    server_socket.bind((&quot;localhost&quot;, 1234))
-    server_socket.listen()
-    print(&quot;Server started&quot;)
-    client_connection, client_address = server_socket.accept()
-    with client_connection:
-        client_message = client_connection.recv(1024).decode()
-        a, b, h = client_message.split(',')
-        client_connection.sendall(str(trapezoid_area(float(a), float(b), float(h))).encode())
-        print(&quot;Client got the result&quot;)
-</code></pre>
-<h4 id="clientpy">client.py</h4>
-<pre><code>import socket
-
-a = input(&quot;Enter the first side (a): &quot;)
-b = input(&quot;Enter the second side (b): &quot;)
-h = input(&quot;Enter height (h): &quot;)
-
-with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client_socket:
-    client_socket.connect((&quot;localhost&quot;, 1234))
-    client_socket.sendall(f&quot;{a}, {b}, {h}&quot;.encode())
-    server_message = client_socket.recv(1024)
-
-print(f&quot;The area of the trapezoid: {server_message.decode()}&quot;)
-</code></pre>
-<h3 id="_4">Пояснение:</h3>
-<p>В рамках данного задания был реализован простой TCP-сервер, при запуске которого после ввода всех необходимых параметров от клиента сервер обрабатывал данные, выполнял расчет площади и направлял готовый результат клиенту. При реализации используется потоковый сокет SOCK_STREAM, в основе которого лежит протокол TCP. Такие сокеты передают поток байтов, который может быть двунаправленным - т.е. приложение может и получать и отправлять данные.</p></p>
+        <p><h2 id="_1">Описание собственного варианта проекта в рамках лабораторной работы</h2>
+<p>Создать программную систему, предназначенную для администрации спортивной школы. Она должна
+обеспечивать хранение сведений о каждом спортсмене, тренерском штабе, о секциях,
+которые преподаются в рамках школы, и о залах. Для каждой секции необходимо учитывать оборудование, используемое для тренировок.</p>
+<p>Об спортсменах должны храниться следующие сведения: ФИО, дата рождения, наименование секций, контактные данные, дата зачисления.
+Администартор должен иметь возможность добавить сведения о новом спортсмене или
+тренере, внести в базу данных информацию о тренировках, удалить данные об уволившемся тренере и отчисленном из школы спортсмене,
+внести изменения в данные об тренерах и спортсменах, в том числе записать спортсмена на новую секцию.</p>
+<p>Администратору могут потребоваться следующие сведения:
+- Какая секция будет в заданном зале, в заданный день недели на заданное время?
+- Сколько спортсменов занимаются в секции и какое количество свободных мест?
+- Какое расписание тренировок у конкретного тренера?
+- Какое оборудование имеется в наличии в определенном зале?
+- Список доступных секций по конкретному виду спорта</p>
+<p>Необходимо предусмотреть возможность получения документа,
+представляющего собой отчет о полной информации конкретной секции. Отчет включает
+сведения об секции, информацию о тренер, полный список спортсменов с их контактными данными, а также расписание тренировок.</p>
+<p>Схема данных:
+<img alt="Alt текст" src="../images/shema.png" /></p></p>
     </article>
 </section>
             <!-- endblock -->

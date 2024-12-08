@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-        <title>Задание 2 - Отчет к лабораторным работам по курсу "WEB-пограммирование"</title>
+        <title>Задание - Отчет к лабораторным работам по курсу "WEB-пограммирование"</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -74,7 +74,7 @@
             </li>
             <li class="drac-box">
                 <a href="../.."
-                    class=" active 
+                    class="
                     drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
                     data-bs-toggle="collapse" data-bs-target="#лабораторная-работа-№1-collapse" aria-expanded="false">
                     Лабораторная работа №1
@@ -83,7 +83,7 @@
                     <ul class="mb-5 drac-list drac-list-none">
                             
     <li class="drac-box-ternary">
-        <a href="../task1/"
+        <a href="../../LR_1/task1/"
             class="
             drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
             Задание 1
@@ -91,15 +91,15 @@
     </li>
                             
     <li class="drac-box-ternary">
-        <a href="./"
-            class=" active 
+        <a href="../../LR_1/task2/"
+            class="
             drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
             Задание 2
         </a>
     </li>
                             
     <li class="drac-box-ternary">
-        <a href="../task3/"
+        <a href="../../LR_1/task3/"
             class="
             drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
             Задание 3
@@ -107,7 +107,7 @@
     </li>
                             
     <li class="drac-box-ternary">
-        <a href="../task4/"
+        <a href="../../LR_1/task4/"
             class="
             drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
             Задание 4
@@ -115,7 +115,7 @@
     </li>
                             
     <li class="drac-box-ternary">
-        <a href="../task5/"
+        <a href="../../LR_1/task5/"
             class="
             drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
             Задание 5
@@ -210,7 +210,7 @@
             </li>
             <li class="drac-box">
                 <a href="../.."
-                    class="
+                    class=" active 
                     drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
                     data-bs-toggle="collapse" data-bs-target="#лабораторная-работа-№3-collapse" aria-expanded="false">
                     Лабораторная работа №3
@@ -219,7 +219,7 @@
                     <ul class="mb-5 drac-list drac-list-none">
                             
     <li class="drac-box-ternary">
-        <a href="../../LR_3/description/"
+        <a href="../description/"
             class="
             drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
             Описание
@@ -227,8 +227,8 @@
     </li>
                             
     <li class="drac-box-ternary">
-        <a href="../../LR_3/task/"
-            class="
+        <a href="./"
+            class=" active 
             drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
             Задание
         </a>
@@ -264,14 +264,14 @@
         <div class="container">
             <div class="row row-preview">
                 <div class="col">
-                    <a href="../task1/"
+                    <a href="../description/"
                         class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </div>
                 <div class="col">
-                    <a href="../task3/"
-                        class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover" style="padding-left: 3%;">
+                    <a 
+                        class="btn-preview drac-btn drac-text-white--hover disabled" style="padding-left: 3%;">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </div>
@@ -307,51 +307,83 @@
             <!-- block content -->
                 <section class="p-md-5 section-content">
     <article>
-        <p><h2 id="no2-tcp-">Задание №2. TCP-сервер</h2>
-<h3 id="_1">Описание:</h3>
-<p>Реализовать клиентскую и серверную часть приложения. Клиент запрашивает выполнение математической операции, параметры которой вводятся с клавиатуры. Сервер обрабатывает данные и возвращает результат клиенту.
-В качестве операции,окторую необходимо обработать и направить клиенту, (отталкиваясь от моего варианта) было предложено реализовать поиск площади трапеции.</p>
-<h3 id="_2">Требования:</h3>
-<ul>
-<li>Обязательно использовать библиотеку socket. </li>
-<li>Реализовать с помощью протокола TCP.</li>
-</ul>
-<h3 id="_3">Листинг кода:</h3>
-<h4 id="serverpy">server.py</h4>
-<pre><code>import socket
+        <p><h2 id="_1">Реализация проекта по варианта в рамках лабораторной работы</h2>
+<p>После утверждения схемы данных, первым делом (после полноценной настройки проекта),
+были созданы 8 основных моделей: Sport, Coach, Sportsman, Equipment, SportHall, EquipmentOfSportHall, SportSection, Schedule.
+Примеры представлены ниже:</p>
+<pre><code>class Sport(models.Model):
+    name = models.CharField(max_length=50, verbose_name='Название')
+    type = models.CharField(max_length=1, choices=(('t', 'team'), ('i', 'individual')), verbose_name='Тип')
+    equipment_needed = models.BooleanField(verbose_name='Надобность оборудования')
 
 
-def trapezoid_area(a_side, b_side, h_side):
-    return (a_side + b_side)*h_side/2
-
-
-with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
-    server_socket.bind((&quot;localhost&quot;, 1234))
-    server_socket.listen()
-    print(&quot;Server started&quot;)
-    client_connection, client_address = server_socket.accept()
-    with client_connection:
-        client_message = client_connection.recv(1024).decode()
-        a, b, h = client_message.split(',')
-        client_connection.sendall(str(trapezoid_area(float(a), float(b), float(h))).encode())
-        print(&quot;Client got the result&quot;)
+class Coach(models.Model):
+    first_name = models.CharField(max_length=50, verbose_name='Имя тренера')
+    last_name = models.TextField(max_length=50, verbose_name='Фамилия тренера')
+    middle_name = models.TextField(max_length=50, verbose_name='Отчество тренера')
+    gender = models.CharField(max_length=1, choices=(('m', 'male'), ('f', 'female')), verbose_name='Пол тренера')
+    date_of_birth = models.DateField(verbose_name='Дата рождения тренера')
+    qualification = models.TextField(max_length=100, verbose_name='Квалификация')
+    experience = models.IntegerField(validators=[MinValueValidator(1)], verbose_name='Опыт работы')
 </code></pre>
-<h4 id="clientpy">client.py</h4>
-<pre><code>import socket
+<p>Далее применила миграции и приступила к созданию views и serializers. В рамках данного этапа
+была проведена полноценная подготовка к заполнению ранее созданных моделей:</p>
+<pre><code>class SportsmenAPIView(APIView):
+    def get(self, request):
+        sportsmen = Sportsman.objects.all()
+        serializer = SportsmanSerializer(sportsmen, many=True)
+        return Response({&quot;Sportsmen&quot;: serializer.data})
 
-a = input(&quot;Enter the first side (a): &quot;)
-b = input(&quot;Enter the second side (b): &quot;)
-h = input(&quot;Enter height (h): &quot;)
 
-with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client_socket:
-    client_socket.connect((&quot;localhost&quot;, 1234))
-    client_socket.sendall(f&quot;{a}, {b}, {h}&quot;.encode())
-    server_message = client_socket.recv(1024)
-
-print(f&quot;The area of the trapezoid: {server_message.decode()}&quot;)
+class SportsmanCreateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Sportsman
+        fields = &quot;__all__&quot;
 </code></pre>
-<h3 id="_4">Пояснение:</h3>
-<p>В рамках данного задания был реализован простой TCP-сервер, при запуске которого после ввода всех необходимых параметров от клиента сервер обрабатывал данные, выполнял расчет площади и направлял готовый результат клиенту. При реализации используется потоковый сокет SOCK_STREAM, в основе которого лежит протокол TCP. Такие сокеты передают поток байтов, который может быть двунаправленным - т.е. приложение может и получать и отправлять данные.</p></p>
+<p>Аналогичные классы были сделаны для всех моделей, после чего я приступила к заполнению. 
+На скриншотах ниже придставлю примеры заполнения и готовые модели:
+<img alt="Alt текст" src="../images/1.png" />
+<img alt="Alt текст" src="../images/2.png" />
+<img alt="Alt текст" src="../images/3.png" />
+<img alt="Alt текст" src="../images/4.png" />
+<img alt="Alt текст" src="../images/5.png" />
+<img alt="Alt текст" src="../images/6.png" />
+<img alt="Alt текст" src="../images/7.png" /></p>
+<p>Теперь доработаем функционал, добавив удаление и редактирование определенных моделей:
+Рассмотрим на примере спортсмена:</p>
+<pre><code>class SportsmenUpdateView(UpdateAPIView):
+    queryset = Sportsman.objects.all()
+    serializer_class = SportsmenSerializer
+
+    def get(self, request, *args, **kwargs):
+        sportsmen = self.get_object()
+        serializer = self.get_serializer(sportsmen)
+        return Response(serializer.data)
+
+
+class SportsmenDeleteView(DestroyAPIView):
+    queryset = Sportsman.objects.all()
+    serializer_class = SportsmenSerializer
+</code></pre>
+<p>Аналогичным образом были созданы view для остальных необходимых моделей. Результат приведем наскришоте ниже:
+<img alt="Alt текст" src="../images/8.png" />
+<img alt="Alt текст" src="../images/9.png" /></p>
+<p>После базовой и обычной нстройки проекта приступим к реализации дополнительного функционала, который был прописан в описании варианта:
+- Какая секция будет в заданном зале, в заданный день недели на заданное время?
+<img alt="Alt текст" src="../images/10.png" />
+- Сколько спортсменов занимаются в секции и какое количество свободных мест?
+<img alt="Alt текст" src="../images/11.png" />
+- Какое расписание тренировок у конкретного тренера?
+<img alt="Alt текст" src="../images/12.png" />
+- Какое оборудование имеется в наличии в определенном зале?
+<img alt="Alt текст" src="../images/13.png" />
+- Список доступных секций по конкретному виду спорта
+<img alt="Alt текст" src="../images/14.png" /></p>
+<p>В финальной части лабораторной работы подключим регистрацию / авторизацию по токенам / вывод информации о текущем пользователе средствами Djoser.
+ На скриншотах ниже будут представлены все запросы, которые выполнялись на осонове видео-урока)
+ <img alt="Alt текст" src="../images/15.png" />
+ <img alt="Alt текст" src="../images/16.png" />
+ <img alt="Alt текст" src="../images/17.png" /></p></p>
     </article>
 </section>
             <!-- endblock -->
