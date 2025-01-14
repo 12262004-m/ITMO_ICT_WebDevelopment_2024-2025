@@ -162,7 +162,7 @@
             </li>
             <li class="drac-box">
                 <a href="../.."
-                    class=" active 
+                    class="
                     drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
                     data-bs-toggle="collapse" data-bs-target="#лабораторная-работа-№2-collapse" aria-expanded="false">
                     Лабораторная работа №2
@@ -171,8 +171,8 @@
                     <ul class="mb-5 drac-list drac-list-none">
                             
     <li class="drac-box-ternary">
-        <a href="./"
-            class=" active 
+        <a href="../../LR_2/task/"
+            class="
             drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
             Задание
         </a>
@@ -246,7 +246,7 @@
             </li>
             <li class="drac-box">
                 <a href="../.."
-                    class="
+                    class=" active 
                     drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
                     data-bs-toggle="collapse" data-bs-target="#лабораторная-работа-№4-collapse" aria-expanded="false">
                     Лабораторная работа №4
@@ -255,8 +255,8 @@
                     <ul class="mb-5 drac-list drac-list-none">
                             
     <li class="drac-box-ternary">
-        <a href="../../LR_4/task/"
-            class="
+        <a href="./"
+            class=" active 
             drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
             Задание
         </a>
@@ -292,14 +292,14 @@
         <div class="container">
             <div class="row row-preview">
                 <div class="col">
-                    <a href="../../PR_2/task3/"
+                    <a href="../../PR_4/task3/"
                         class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </div>
                 <div class="col">
-                    <a href="../../PR_3/task1/"
-                        class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover" style="padding-left: 3%;">
+                    <a 
+                        class="btn-preview drac-btn drac-text-white--hover disabled" style="padding-left: 3%;">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </div>
@@ -335,256 +335,90 @@
             <!-- block content -->
                 <section class="p-md-5 section-content">
     <article>
-        <p><h2 id="django">Реализация простого сайта на django</h2>
-<p>Цель: овладеть практическими навыками и умениями реализации web-сервисов
-средствами Django 2.2.</p>
-<p>Тема: "Список отелей"</p>
-<p>Необходимо учитывать 
-* Название отеля
-* Владельца отеля
-* Адрес
-* Описание
-* Типы номеров
-* Стоимость
-* Вместимость
-* Удобства</p>
-<p>Необходимо реализовать следующий функционал:
-* Регистрация новых пользователей.
-* Просмотр и резервирование номеров. Пользователь должен иметь
-возможность редактирования и удаления своих резервирований.
-* Написание отзывов к номерам. При добавлении комментариев, должны
-сохраняться период проживания, текст комментария, рейтинг (1-10),
-информация о комментаторе.
-* Администратор должен иметь возможность заселить пользователя в отель и
-выселить из отеля средствами Django-admin.
-* В клиентской части должна формироваться таблица, отображающая
-постояльцев отеля за последний месяц.</p>
-<p>Ход работы:</p>
+        <p><h2 id="vuejs">Реализация клиентской части приложения средствами vue.js.</h2>
+<p>Описание проекта: система предназначена для администрирования спортивного комплекса (под спортивным комплексом подразумевается, например, спортивная школа). Она обеспечивает учет данных о секциях, тренерах, учениках и расписании тренировок. Спортивный комплекс включает в себя залы для разных видов спорта.</p>
+<p>В ней представлены следующие интерфейсы
+1. Регистрация и авторизация для администраторов
+   - Форма для вода данных</p>
 <ol>
+<li>Главная страница. </li>
+<li>Расписание тренировок на сегодняшний день во всех залах</li>
 <li>
-<p>Создаем проект и приложение</p>
+<p>Новостная лента</p>
 </li>
 <li>
-<p>Далее сразу определим и создадим модели </p>
+<p>Навигационная панель</p>
 </li>
+<li>
+<p>Вкладки: расписание, ученики, тренеры, отчет, секции</p>
+</li>
+<li>
+<p>Ученики. </p>
+</li>
+<li>Список все учеников (ФИО, пол, дата рождения, контактные данные, дата регистрации)</li>
+<li>Добавление учеников</li>
+<li>
+<p>Редактирование учеников</p>
+</li>
+<li>
+<p>Тренеры. </p>
+</li>
+<li>Список всех тренеров (персональная информация) </li>
+<li>
+<p>Возможность добавлять новых тренеров в базу.</p>
+</li>
+<li>
+<p>Расписание. </p>
+</li>
+<li>Актуальная информация о занятости спортзалов по дням недели</li>
+<li>
+<p>Фильтрация по тренеру</p>
+</li>
+<li>
+<p>Секции.</p>
+</li>
+<li>Список всех секций</li>
+<li>
+<p>Добавление ученика в конкретную секцию</p>
+</li>
+<li>
+<p>Отчет по тренерам</p>
+</li>
+<li>Формирование отчета про конкретного тренера</li>
 </ol>
-<pre><code>from django.core.validators import MinValueValidator, MaxValueValidator
-from django.db import models
-from django.contrib.auth.models import User
-
-
-class Hotel(models.Model):
-    name = models.CharField(max_length=20)
-    description = models.TextField()
-    address = models.CharField(max_length=30)
-    owner = models.CharField(max_length=30)
-
-
-class RoomType(models.Model):
-    type = models.CharField(max_length=20)
-    description = models.TextField()
-    capacity = models.CharField(max_length=100)
-    facilities = models.CharField(max_length=100)
-
-
-class Room(models.Model):
-    hotel = models.ForeignKey(Hotel, on_delete=models.CASCADE, related_name=&quot;rooms&quot;)
-    type = models.ForeignKey(RoomType, on_delete=models.CASCADE)
-    price = models.CharField(max_length=100)
-
-
-class Reservation(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    hotel = models.ForeignKey(Hotel, on_delete=models.CASCADE)
-    room = models.ForeignKey(Room, on_delete=models.CASCADE)
-    start_date = models.DateField()
-    end_date = models.DateField()
-    status = models.CharField(max_length=20, choices=[('checked_in', 'Checked In'), ('checked_out', 'Checked Out')], default='not_checked_in')
-
-
-class Review(models.Model):
-    reservation = models.ForeignKey(Reservation, on_delete=models.CASCADE)
-    rating = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)])
-    comment = models.TextField()
-</code></pre>
-<p>Примечание: модель пользвоателя создается автоматически через внутрянку Django <br>
-Выполняем миграции, наши модели автоматически создаются. Предоставляем доступ к моделям в админке:</p>
-<pre><code>admin.site.register(Hotel)
-admin.site.register(Room)
-admin.site.register(RoomType)
-admin.site.register(Review)
-admin.site.register(Reservation)
-</code></pre>
-<ol>
-<li>Переходим к постепенному созданию полноценного проекта. Начнем с авторизации пользвоателя (регистрация + вход)
-Создаем форму регистрации:</li>
-</ol>
-<pre><code>class UserRegistrationForm(UserCreationForm):
-    email = forms.EmailField(required=True)
-
-    class Meta:
-        model = User
-        fields = ('username', 'email', 'password1', 'password2')
-        widgets = {
-            'username': forms.TextInput(),
-            'email': forms.EmailInput(),
-            'password1': forms.PasswordInput(),
-            'password2': forms.PasswordInput(),
-        }
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        for field in ['username', 'email', 'password1', 'password2']:
-            self.fields[field].help_text = None
-</code></pre>
-<p>И контроллера:</p>
-<pre><code>def user_registration(request):
-    if request.method == 'POST':
-        form = UserRegistrationForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request, user)
-            return redirect('login')
-    else:
-        form = UserRegistrationForm()
-    return render(request, 'registration.html', {'form': form})
-</code></pre>
-<ol>
-<li>Теперь поработаем с отелями. Нам нужно создать контроллеры для получения списка всех отелей и информации о конкретном, а также страницы для визуализации:</li>
-</ol>
-<pre><code>def get_all_hotels(request):
-    hotels = Hotel.objects.all()
-    return render(request, 'hotels.html', {'hotels': hotels})
-
-
-def get_hotel_info(request, hotel_id):
-    try:
-        hotel = Hotel.objects.get(pk=hotel_id)
-    except:
-        raise Http404(&quot;Hotel does not exist&quot;)
-    rooms = hotel.rooms.all()
-    return render(request, 'hotel_info.html', {'hotel': hotel, 'rooms': rooms})
-</code></pre>
-<p>Итог:
+<p>Приступим к реализации варианта проекта. Для начала создадим и настроим сервер, а именно проработаем модели, сериализаторы, представления и маршруты. Ниже на скриншотах будут представлены частичные куски кода:</p>
+<p>models.py
 <img alt="Alt текст" src="../images/1.png" /></p>
-<p><img alt="Alt текст" src="../images/2.png" /></p>
-<ol>
-<li>Следующий этап - бронирование. Необходимо добавить функционал для создания / редактирвоания / удаления бронирования. Приступим!</li>
-</ol>
-<pre><code>@login_required
-def get_all_reservations(request):
-    reservations = Reservation.objects.filter(user=request.user)
-    return render(request, 'all_reservations.html', {'reservations': reservations})
-
-
-@login_required
-def create_reservation(request, room_id):
-    try:
-        room = Room.objects.get(pk=room_id)
-    except Room.DoesNotExist:
-        raise Http404(&quot;Room does not exist&quot;)
-    if request.method == 'POST':
-        start_date = request.POST.get('start_date')
-        end_date = request.POST.get('end_date')
-        reservation = Reservation(user=request.user, hotel=room.hotel, room=room, start_date=start_date, end_date=end_date)
-        reservation.save()
-        return redirect('all_reservations')
-    return render(request, 'create_reservation.html', {'room': room})
-
-
-@login_required
-def update_reservation(request, reservation_id):
-    try:
-        reservation = Reservation.objects.get(pk=reservation_id)
-    except Reservation.DoesNotExist:
-        raise Http404(&quot;Reservation does not exist&quot;)
-    if request.method == 'POST':
-        reservation.start_date = request.POST.get('start_date')
-        reservation.end_date = request.POST.get('end_date')
-        reservation.save()
-        return redirect('all_reservations')
-    return render(request, 'update_reservation.html', {'reservation': reservation})
-
-
-@login_required
-def delete_reservation(request, reservation_id):
-    try:
-        reservation = Reservation.objects.get(pk=reservation_id)
-    except Reservation.DoesNotExist:
-        raise Http404(&quot;Reservation does not exist&quot;)
-    if request.method == 'POST':
-        reservation.delete()
-        return redirect('all_reservations')
-    return render(request, 'delete_reservation.html', {'reservation': reservation})
-</code></pre>
-<p>В результате получилось следующее:
+<p>views.py
+<img alt="Alt текст" src="../images/2.png" /></p>
+<p>admin.py
 <img alt="Alt текст" src="../images/3.png" /></p>
-<p><img alt="Alt текст" src="../images/4.png" /></p>
-<ol>
-<li>Следующий этап - отзывы. Аналогично можно просматривать все отзывы, добавлять свой</li>
-</ol>
-<pre><code>@login_required
-def create_review(request, reservation_id):
-    try:
-        reservation = Reservation.objects.get(pk=reservation_id, user=request.user)
-    except Reservation.DoesNotExist:
-        raise Http404(&quot;Reservation does not exist&quot;)
-    if request.method == 'POST':
-        form = ReviewForm(request.POST)
-        if form.is_valid():
-            review = form.save(commit=False)
-            review.reservation = reservation
-            review.user = request.user
-            review.save()
-            return redirect('all_reservations')
-    else:
-        form = ReviewForm()
-    return render(request, 'create_review.html', {'form': form, 'reservation': reservation})
-
-
-@login_required
-def get_all_reviews(request, room_id):
-    try:
-        room = Room.objects.get(pk=room_id)
-    except Room.DoesNotExist:
-        raise Http404(&quot;Room does not exist&quot;)
-    reviews = Review.objects.filter(reservation__room=room)
-    return render(request, 'all_reviews.html', {'room': room, 'reviews': reviews})
-</code></pre>
-<p>Итог: 
+<p>serializers.py
+<img alt="Alt текст" src="../images/4.png" /></p>
+<p>urls.py
 <img alt="Alt текст" src="../images/5.png" /></p>
-<p><img alt="Alt текст" src="../images/6.png" /></p>
-<ol>
-<li>Настало время перейти к админке. Тут сначала реализуем возможность заселить пользователя в отель и
-выселить из отеля средствами Django-admin. Для этого создадим дополнительные actions для модели Reservation</li>
-</ol>
-<pre><code>class ReservationAdmin(admin.ModelAdmin):
-    list_display = ('user', 'hotel', 'start_date', 'end_date', 'status')
-    actions = ['check_in', 'check_out']
-    list_filter = (LastMonthFilter,)
-
-    def check_in(self, request, queryset):
-        queryset.update(status='checked_in')
-
-    def check_out(self, request, queryset):
-        queryset.update(status='checked_out')
-</code></pre>
-<p>Теперь в админке мы можем выбирать любыем бронирования и менять их статус. Изначально он приравнен к отсутствующему. Далее можно подтверждать и, наоборот, снимать брони с каждого пользвоателя</p>
-<ol>
-<li>И финальная часть - фильтрация. Именно так мне захотелось реализовать последний блок, а именно с просмотром брониорваний за последний месяц. Для этого создадим в админке дополнительный фильтр и при необходимости будем его применять</li>
-</ol>
-<pre><code>class LastMonthFilter(admin.SimpleListFilter):
-    title = 'Data'
-    parameter_name = 'last_month_reservations'
-
-    def lookups(self, request, model_admin):
-        return [('last_month_reservations', 'Last month reservations')]
-
-    def queryset(self, request, queryset):
-        if self.value() == 'last_month':
-            return queryset.filter(start_date__gte=timezone.now() - timezone.timedelta(days=30))
-        return queryset
-</code></pre></p>
+<p>Сразу настроим CORS в нашем проекте:
+<img alt="Alt текст" src="../images/6.png" />
+<img alt="Alt текст" src="../images/7.png" /></p>
+<p>Далее рассмотрим решистрацию и логин. Они реализуются через токен, которые генерируется нашим сервером.
+<img alt="Alt текст" src="../images/8.png" />
+<img alt="Alt текст" src="../images/9.png" /></p>
+<p>Перейдем к главной странице, вот что получилось:
+<img alt="Alt текст" src="../images/10.png" />
+Для этого я создала скрипт, которы на основе всех тренировок в бд применял фильтрацию по сегодняшнему дню недели:
+<img alt="Alt текст" src="../images/11.png" /></p>
+<p>Страница "Расписание". Реализавана фильтрация по конкретному тренеру СШ:
+<img alt="Alt текст" src="../images/17.png" />
+<img alt="Alt текст" src="../images/16.png" /></p>
+<p>Страница "Секции":
+<img alt="Alt текст" src="../images/12.png" /></p>
+<p>Страница "Ученики", а именно спортсмены спортивной школы. Есть опция редактирования спортсмена и доабвления новых:
+<img alt="Alt текст" src="../images/13.png" /></p>
+<p>Страница "Тренеры". Опци добавления нового тренера:
+<img alt="Alt текст" src="../images/14.png" /></p>
+<p>Страница "Отчеты". Она отвечает за генерацию отчетов про конкретного тренера:
+<img alt="Alt текст" src="../images/15.png" /></p>
+<p>Вывод: Таким образом, в рамках данной лабораторной работы я смогла совместить все полученные знания в рамках дисциплины "Фронтенд-разработка" и "WEB-разработка", в конечном итоге получив готовый проект</p></p>
     </article>
 </section>
             <!-- endblock -->
