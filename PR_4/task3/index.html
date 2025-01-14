@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-        <title>Задание 2 - Отчет к лабораторным работам по курсу "WEB-пограммирование"</title>
+        <title>Задание 3 - Отчет к лабораторным работам по курсу "WEB-пограммирование"</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -126,7 +126,7 @@
             </li>
             <li class="drac-box">
                 <a href="../.."
-                    class=" active 
+                    class="
                     drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
                     data-bs-toggle="collapse" data-bs-target="#практическая-работа-№2-collapse" aria-expanded="false">
                     Практическая работа №2
@@ -135,7 +135,7 @@
                     <ul class="mb-5 drac-list drac-list-none">
                             
     <li class="drac-box-ternary">
-        <a href="../task1/"
+        <a href="../../PR_2/task1/"
             class="
             drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
             Задание 1
@@ -143,15 +143,15 @@
     </li>
                             
     <li class="drac-box-ternary">
-        <a href="./"
-            class=" active 
+        <a href="../../PR_2/task2/"
+            class="
             drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
             Задание 2
         </a>
     </li>
                             
     <li class="drac-box-ternary">
-        <a href="../task3/"
+        <a href="../../PR_2/task3/"
             class="
             drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
             Задание 3
@@ -218,7 +218,7 @@
             </li>
             <li class="drac-box">
                 <a href="../.."
-                    class="
+                    class=" active 
                     drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
                     data-bs-toggle="collapse" data-bs-target="#практическая-работа-№4-collapse" aria-expanded="false">
                     Практическая работа №4
@@ -227,7 +227,7 @@
                     <ul class="mb-5 drac-list drac-list-none">
                             
     <li class="drac-box-ternary">
-        <a href="../../PR_4/task2/"
+        <a href="../task2/"
             class="
             drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
             Задание 2
@@ -235,8 +235,8 @@
     </li>
                             
     <li class="drac-box-ternary">
-        <a href="../../PR_4/task3/"
-            class="
+        <a href="./"
+            class=" active 
             drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
             Задание 3
         </a>
@@ -292,14 +292,14 @@
         <div class="container">
             <div class="row row-preview">
                 <div class="col">
-                    <a href="../task1/"
+                    <a href="../task2/"
                         class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </div>
                 <div class="col">
-                    <a href="../task3/"
-                        class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover" style="padding-left: 3%;">
+                    <a 
+                        class="btn-preview drac-btn drac-text-white--hover disabled" style="padding-left: 3%;">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </div>
@@ -335,63 +335,42 @@
             <!-- block content -->
                 <section class="p-md-5 section-content">
     <article>
-        <p><h2 id="no22-crud">Практическая работа №2.2. "Реализации CRUD"</h2>
-<p>Цель работы: дать подробное представление о реализации CRUD(Create, read, update and delete) интерфейсов средствами Django WEB фреймворка.</p>
-<h3 id="no1">Задание №1. Доработка модели данных. Реализация связи “Многие ко многим”</h3>
-<p>Необходимо правильно настроить связь между автомобилем, владением и владельцем.</p>
-<pre><code>class CarOwner(models.Model):
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
-    date_of_birth = models.DateField(null=True)
-    cars = models.ManyToManyField(Car, through=&quot;Possession&quot;)
-
-    def __str__(self):
-        return f&quot;{self.first_name} {self.last_name}, {self.date_of_birth}&quot;
+        <p><h2 id="no42-vuejs">Практическая работа №4.2. "Введение во Vue.js"</h2>
+<p>Цель работы: получить представление о работе Vue.js.</p>
+<p>Первым делом установим необходимые расширения:</p>
+<pre><code>pip install npm
+pip install node
+npm install -g @vue/cli
 </code></pre>
-<h3 id="no2">Задание №2. Работа с представлениями</h3>
-<p>Создадим представление для вывода всех владельцев</p>
-<pre><code>def get_all_owners(request):
-    try:
-        all_owners = CarOwner.objects.all()
-    except CarOwner.DoesNotExist:
-        raise Http404(&quot;Empty table&quot;)
-    return render(request, 'all_owners.html', {'all_owners': all_owners})
-После создания проекта и приложения получилась следующая структура:
+<p>Теперь, когда vue и vue-cli глобально установлены, можно приступать к инициализации проекта. Выполним команду</p>
+<pre><code>npm init vue@latest
 </code></pre>
-<p>Затем создадим отдальный html-шаблон для корректного вывода на странице всех данных
-Добавим маршрут в urls.py</p>
-<pre><code>urlpatterns = [
-     path('owner/&lt;int:owner_id&gt;/', views.get_owner, name='get_owner'),
-     path('owners/', views.get_all_owners, name='get_all_owners'),
-]
+<p>Следуем шагам, которые предлагает CLI-утилита:
+<img alt="Alt текст" src="../images/2_1.png" /></p>
+<p>На последок выполним команды, которые нам предлагает утилита:</p>
+<pre><code>cd web-4-vue
+npm install
+npm run dev
 </code></pre>
-<p>Через консоль добавим данные о владельцах в нашу модель:
-<img alt="Alt текст" src="../screen_shots/2_1.png" /></p>
-<p>И проверим работоспособность написанной программы путем вывода всей информации на отдельной html странице:
-<img alt="Alt текст" src="../screen_shots/2_2.png" /></p>
-<p>Реализовать вывод всех автомобилей, вывод автомобиля по id, обновления на основе классов. Добавить данные минимум о трех автомобилях. Должны быть реализованы контроллер (views) и шаблоны (temlates).
-<img alt="Alt текст" src="../screen_shots/2_3.png" /></p>
-<h3 id="no3">Задание №3.  Работа с формами и представлениями</h3>
-<p>Создадим форму для создания владельца</p>
-<pre><code>from django import forms
-from .models import CarOwner
-
-class CreateCarOwnerForm(forms.ModelForm):
-    class Meta:
-        model = CarOwner
-        fields = [&quot;first_name&quot;, &quot;last_name&quot;, &quot;date_of_birth&quot;]
-</code></pre>
-<p>Затем создадим создадиф функцию для обработки формы</p>
-<pre><code>def create_owner_form(request):
-    context = {}
-    form = CreateCarOwnerForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-        return redirect('get_all_owners')
-    context['form'] = form
-    return render(request, &quot;create_owner.html&quot;, context)
-</code></pre>
-<p><img alt="Alt текст" src="../screen_shots/2_4.png" /></p></p>
+<p>Готово, все равботает:
+<img alt="Alt текст" src="../images/2_2.png" />
+<img alt="Alt текст" src="../images/2_3.png" /></p>
+<p>Теперь поработаем с роутингом. Создадим файл с наполнением, который будет нашей страницей:
+<img alt="Alt текст" src="../images/2_4.png" /></p>
+<p>И после настройки роутера получаем следующий результат:
+<img alt="Alt текст" src="../images/2_5.png" /></p>
+<p>А теперь приступим к проработке ранее созданных моделей Войнов. Напишем код представления для Warriors:
+<img alt="Alt текст" src="../images/2_6.png" />
+<img alt="Alt текст" src="../images/2_7.png" /></p>
+<p>Далее напишем код компоненты получения данных:
+<img alt="Alt текст" src="../images/2_8.png" /></p>
+<p>И код создания формы компоненты получения данных:
+<img alt="Alt текст" src="../images/2_9.png" /></p>
+<p>Перед проверкой внесем коррективы в роутер:
+<img alt="Alt текст" src="../images/2_10.png" /></p>
+<p>Переходим по ссылке и получаем следующий результат:
+<img alt="Alt текст" src="../images/2_11.png" /></p>
+<p>В рамках данной практической работы я познакомилась и освежила свои знания о Vue</p></p>
     </article>
 </section>
             <!-- endblock -->
