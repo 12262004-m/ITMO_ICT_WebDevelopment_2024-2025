@@ -126,7 +126,7 @@
             </li>
             <li class="drac-box">
                 <a href="../.."
-                    class=" active 
+                    class="
                     drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
                     data-bs-toggle="collapse" data-bs-target="#практическая-работа-№2-collapse" aria-expanded="false">
                     Практическая работа №2
@@ -135,7 +135,7 @@
                     <ul class="mb-5 drac-list drac-list-none">
                             
     <li class="drac-box-ternary">
-        <a href="../task1/"
+        <a href="../../PR_2/task1/"
             class="
             drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
             Задание 1
@@ -143,15 +143,15 @@
     </li>
                             
     <li class="drac-box-ternary">
-        <a href="./"
-            class=" active 
+        <a href="../../PR_2/task2/"
+            class="
             drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
             Задание 2
         </a>
     </li>
                             
     <li class="drac-box-ternary">
-        <a href="../task3/"
+        <a href="../../PR_2/task3/"
             class="
             drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
             Задание 3
@@ -218,7 +218,7 @@
             </li>
             <li class="drac-box">
                 <a href="../.."
-                    class="
+                    class=" active 
                     drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
                     data-bs-toggle="collapse" data-bs-target="#практическая-работа-№4-collapse" aria-expanded="false">
                     Практическая работа №4
@@ -227,15 +227,15 @@
                     <ul class="mb-5 drac-list drac-list-none">
                             
     <li class="drac-box-ternary">
-        <a href="../../PR_4/task2/"
-            class="
+        <a href="./"
+            class=" active 
             drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
             Задание 2
         </a>
     </li>
                             
     <li class="drac-box-ternary">
-        <a href="../../PR_4/task3/"
+        <a href="../task3/"
             class="
             drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
             Задание 3
@@ -292,7 +292,7 @@
         <div class="container">
             <div class="row row-preview">
                 <div class="col">
-                    <a href="../task1/"
+                    <a href="../../PR_3/task2/"
                         class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
@@ -335,63 +335,18 @@
             <!-- block content -->
                 <section class="p-md-5 section-content">
     <article>
-        <p><h2 id="no22-crud">Практическая работа №2.2. "Реализации CRUD"</h2>
-<p>Цель работы: дать подробное представление о реализации CRUD(Create, read, update and delete) интерфейсов средствами Django WEB фреймворка.</p>
-<h3 id="no1">Задание №1. Доработка модели данных. Реализация связи “Многие ко многим”</h3>
-<p>Необходимо правильно настроить связь между автомобилем, владением и владельцем.</p>
-<pre><code>class CarOwner(models.Model):
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
-    date_of_birth = models.DateField(null=True)
-    cars = models.ManyToManyField(Car, through=&quot;Possession&quot;)
-
-    def __str__(self):
-        return f&quot;{self.first_name} {self.last_name}, {self.date_of_birth}&quot;
+        <p><h2 id="no43-cors-cross-origin-resource-sharing">Практическая работа №4.3. "Настройка CORS (Cross-origin resource sharing)"</h2>
+<p>Цель работы: получить практические навыки настройки CORS (Cross-origin resource sharing)</p>
+<p>Первым делом необходимо установить django-cors-headers с помощью pip:</p>
+<pre><code>pip install django-cors-headers
 </code></pre>
-<h3 id="no2">Задание №2. Работа с представлениями</h3>
-<p>Создадим представление для вывода всех владельцев</p>
-<pre><code>def get_all_owners(request):
-    try:
-        all_owners = CarOwner.objects.all()
-    except CarOwner.DoesNotExist:
-        raise Http404(&quot;Empty table&quot;)
-    return render(request, 'all_owners.html', {'all_owners': all_owners})
-После создания проекта и приложения получилась следующая структура:
-</code></pre>
-<p>Затем создадим отдальный html-шаблон для корректного вывода на странице всех данных
-Добавим маршрут в urls.py</p>
-<pre><code>urlpatterns = [
-     path('owner/&lt;int:owner_id&gt;/', views.get_owner, name='get_owner'),
-     path('owners/', views.get_all_owners, name='get_all_owners'),
-]
-</code></pre>
-<p>Через консоль добавим данные о владельцах в нашу модель:
-<img alt="Alt текст" src="../screen_shots/2_1.png" /></p>
-<p>И проверим работоспособность написанной программы путем вывода всей информации на отдельной html странице:
-<img alt="Alt текст" src="../screen_shots/2_2.png" /></p>
-<p>Реализовать вывод всех автомобилей, вывод автомобиля по id, обновления на основе классов. Добавить данные минимум о трех автомобилях. Должны быть реализованы контроллер (views) и шаблоны (temlates).
-<img alt="Alt текст" src="../screen_shots/2_3.png" /></p>
-<h3 id="no3">Задание №3.  Работа с формами и представлениями</h3>
-<p>Создадим форму для создания владельца</p>
-<pre><code>from django import forms
-from .models import CarOwner
-
-class CreateCarOwnerForm(forms.ModelForm):
-    class Meta:
-        model = CarOwner
-        fields = [&quot;first_name&quot;, &quot;last_name&quot;, &quot;date_of_birth&quot;]
-</code></pre>
-<p>Затем создадим создадиф функцию для обработки формы</p>
-<pre><code>def create_owner_form(request):
-    context = {}
-    form = CreateCarOwnerForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-        return redirect('get_all_owners')
-    context['form'] = form
-    return render(request, &quot;create_owner.html&quot;, context)
-</code></pre>
-<p><img alt="Alt текст" src="../screen_shots/2_4.png" /></p></p>
+<p>После этого добавим его в свой settings.py файл проекта :
+<img alt="Alt текст" src="../images/3_1.png" /></p>
+<p>И затем пропишем corsheaders.middleware.CorsMiddleware в “MIDDLEWARE_CLASSES” в том же файле:
+<img alt="Alt текст" src="../images/3_2.png" /></p>
+<p>Подключим CORS:
+<img alt="Alt текст" src="../images/3_3.png" /></p>
+<p>Таким образом, мне удалось выполнить задание и подключить CORS в свой проект </p></p>
     </article>
 </section>
             <!-- endblock -->
